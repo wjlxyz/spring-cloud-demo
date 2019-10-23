@@ -1,0 +1,11 @@
+server:
+  port: 2000
+eureka:
+  instance:
+    appname: eureka-client
+
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://127.0.0.1:1000/eureka
