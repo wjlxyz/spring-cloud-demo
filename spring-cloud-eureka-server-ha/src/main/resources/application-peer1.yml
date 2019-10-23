@@ -1,10 +1,10 @@
 server:
-  port: 1000
+  port: 1001
 
 eureka:
   instance:
     hostname: 127.0.0.1
-    appname: eureka-server
+    appname: eureka-server-peer1
     status-page-url: http://${eureka.instance.hostname}/info
     status-page-url-path: ${management.context-path}/info
     health-check-url: http://${eureka.instance.hostname}/health
@@ -15,7 +15,7 @@ eureka:
     register-with-eureka: true
     fetch-registry: true
     service-url:
-      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+      defaultZone: http://${eureka.instance.hostname}:1000/eureka/
 
 management:
   context-path: /manager
