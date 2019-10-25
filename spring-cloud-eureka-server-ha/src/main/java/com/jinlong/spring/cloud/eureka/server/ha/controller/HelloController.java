@@ -1,4 +1,4 @@
-package com.jinlong.spring.cloud.eureka.client.controller;
+package com.jinlong.spring.cloud.eureka.server.ha.controller;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +19,7 @@ public class HelloController {
     @Autowired
     private DiscoveryClient discoveryClient;
 
-    // just for testing @LoadBalance with Ribbo
+    // just for testing @LoadBalance with Ribbon
     @RequestMapping(path = "/hi", method = RequestMethod.GET)
     public String index(String name) {
         ServiceInstance instance = discoveryClient.getLocalServiceInstance();

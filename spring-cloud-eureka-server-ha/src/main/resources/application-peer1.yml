@@ -19,3 +19,6 @@ eureka:
 
 management:
   context-path: /manager
+spring:
+  application:
+    name: eureka-client
