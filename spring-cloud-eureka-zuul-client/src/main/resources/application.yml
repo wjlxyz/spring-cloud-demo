@@ -1,0 +1,21 @@
+server:
+  port: 5000
+
+spring:
+  application:
+    name: service-zuul
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:1000,http://127.0.0.1:1001
+zuul:
+  routes:
+    hiapi:
+      path: /hiapi/**
+      serviceId: eureka-client
+    ribbonapi:
+      path: /ribbonapi/**
+      serviceid: eureka-ribbon-client
+    feignapi:
+      path: /feignapi/**
+      serviceid: eureka-feign-client
